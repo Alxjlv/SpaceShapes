@@ -5,7 +5,7 @@ package spaceshapes;
  * painting. A MockPainter implementation responds to Painter requests by
  * logging simply logging them. The contents of a MockPainter object's
  * log can be retrieved by a call to toString() on the MockPainter.
- * 
+ * This is a stub.
  * @author Paramvir Singh (Original Author - Ian Warren)
  * 
  */
