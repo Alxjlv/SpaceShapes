@@ -42,4 +42,19 @@ public class GraphicsPainter implements Painter {
 	public void drawLine(int x1, int y1, int x2, int y2) {
 		_g.drawLine(x1, y1, x2, y2);
 	}
+
+	@Override
+	public void fillRect(int x, int y, int width, int height) {
+		_g.fillRect(x, y, width, height);
+	}
+
+	@Override
+	public Color getColor() {
+		return _g.getColor();
+	}
+
+	@Override
+	public void setColor(Color c) {
+		_g.setColor(c);
+	}
 }

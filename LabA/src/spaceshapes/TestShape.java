@@ -32,12 +32,44 @@ public class TestShape {
 	 * Shape's position after the movement is correct.
 	 */
 	@Test
-	public void testSimpleMove() {
+	public void testSimpleMoveRectangle() {
 		RectangleShape shape = new RectangleShape(100, 20, 12, 15);
 		shape.paint(_painter);
 		shape.move(500, 500);
 		shape.paint(_painter);
 		assertEquals("(rectangle 100,20,25,35)(rectangle 112,35,25,35)", 
+				_painter.toString());
+	}
+	
+	@Test
+	public void testSimpleMoveOval() {
+		OvalShape shape = new OvalShape(100, 20, 12, 15);
+		shape.paint(_painter);
+		shape.move(500, 500);
+		shape.paint(_painter);
+		assertEquals("(oval 100,20,25,35)(oval 112,35,25,35)", 
+				_painter.toString());
+	}
+	
+	@Test
+	public void testSimpleMoveSmallHexagon() {
+		HexagonShape shape = new HexagonShape(100, 20, 12, 15);
+		shape.paint(_painter);
+		shape.move(500, 500);
+		shape.paint(_painter);
+		assertEquals("(line 100,37,112,55)(line 112,55,125,37)(line 125,37,112,20)(line 112,20,100,37)"
+				+"(line 112,52,124,70)(line 124,70,137,52)(line 137,52,124,35)(line 124,35,112,52)", 
+				_painter.toString());
+	}
+	
+	@Test
+	public void testSimpleMoveBigHexagon() {
+		HexagonShape shape = new HexagonShape(100, 20, 12, 15,90,90);
+		shape.paint(_painter);
+		shape.move(500, 500);
+		shape.paint(_painter);
+		assertEquals("(line 100,65,120,110)(line 120,110,170,110)(line 170,110,190,65)(line 190,65,170,20)(line 170,20,120,20)(line 120,20,100,65)"
+				+"(line 112,80,132,125)(line 132,125,182,125)(line 182,125,202,80)(line 202,80,182,35)(line 182,35,132,35)(line 132,35,112,80)", 
 				_painter.toString());
 	}
 	

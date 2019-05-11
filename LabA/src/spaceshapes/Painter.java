@@ -1,6 +1,7 @@
 package spaceshapes;
 
-//import java.awt.Color;
+
+import java.awt.Color;
 
 /** 
  * Interface to represent a type that offers primitive drawing methods.
@@ -26,4 +27,10 @@ public interface Painter {
 	 * line, parameters x2 and y2 the ending point.
 	 */
 	public void drawLine(int x1, int y1, int x2, int y2);
+	
+	public void fillRect(int x, int y, int width, int height);
+	
+	public Color getColor();
+	
+	public void setColor(Color c);
 }

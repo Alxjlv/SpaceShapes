@@ -1,5 +1,7 @@
 package spaceshapes;
 
+import java.awt.Color;
+
 /**
  * Implementation of the Painter interface that does not actually do any
  * painting. A MockPainter implementation responds to Painter requests by
@@ -39,5 +41,23 @@ public class MockPainter implements Painter {
 	 */
 	public void drawLine(int x1, int y1, int x2, int y2) {
 		_log.append("(line " + x1 + "," + y1 + "," + x2 + "," + y2 + ")");
+	}
+
+	@Override
+	public void fillRect(int x, int y, int width, int height) {
+		_log.append("(rectangle filled: "+ x + "," + y + "," + width + "," + height +")");
+	}
+
+	@Override
+	public Color getColor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setColor(Color c) {
+		
+		// TODO Auto-generated method stub
+		
 	}
 }

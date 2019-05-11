@@ -35,9 +35,7 @@ public class HexagonShape extends Shape {
 			painter.drawLine(_x, _y+_height/2, _x+_width/2, _y + _height);//far left to top middle
 			painter.drawLine(_x+_width/2, _y + _height, _x+_width, _y +_height/2);//top middle to far right
 			painter.drawLine(_x+_width, _y+_height/2, _x+_width/2, _y);//far right to bottom middle
-			painter.drawLine(_x+_width/2, _y, _x, _y+_height/2);//bottom middle to far left
-			//painter.drawLine(_x, _y+_height/2, _x+_width/2, _y);
-			
+			painter.drawLine(_x+_width/2, _y, _x, _y+_height/2);//bottom middle to far left			
 		}
 		}
 		
