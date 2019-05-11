@@ -47,7 +47,8 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		// Populate the list of Shapes.
 		_shapes.add(new RectangleShape(0, 0, 2, 3));
 		_shapes.add(new RectangleShape(10, 10, 4, 2));
-		//_shapes.add(new OvalShape(20,20,3, 5));
+		_shapes.add(new OvalShape(20,20,5,3));
+		_shapes.add(new OvalShape(20,20,3, 5));
 		
 		// Start the animation.
 		_timer.start();
