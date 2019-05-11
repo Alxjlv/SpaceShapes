@@ -30,7 +30,7 @@ public class DynamicShape extends Shape {
 			painter.setColor(Color.red);
 			painter.fillRect(_x,_y,_width,_height);
 		}
-		if(_deltaY <0 && (_y + _deltaY)<=0) {
+		if((_deltaY <0 && (_y + _deltaY)<=0)) {
 			_collide = false;
 			painter.setColor(Color.black);
 			painter.fillRect(_x,_y,_width,_height);

@@ -78,7 +78,7 @@ public class TestShape {
 	 * ensure that the Shape's position after the movement is correct.
 	 */
 	@Test
-	public void testShapeMoveWithBounceOffRight() {
+	public void testRectangleMoveWithBounceOffRight() {
 		RectangleShape shape = new RectangleShape(100, 20, 12, 15);
 		shape.paint(_painter);
 		shape.move(135, 10000);
@@ -89,6 +89,18 @@ public class TestShape {
 				+ "(rectangle 98,50,25,35)", _painter.toString());
 	}
 
+	@Test
+	public void testOvalMoveWithBounceOffRight() {
+		OvalShape shape = new OvalShape(100, 20, 12, 15);
+		shape.paint(_painter);
+		shape.move(135, 10000);
+		shape.paint(_painter);
+		shape.move(135, 10000);
+		shape.paint(_painter);
+		assertEquals("(oval 100,20,25,35)(oval 110,35,25,35)"
+				+ "(oval 98,50,25,35)", _painter.toString());
+	}
+	
 	/**
 	 * Test to perform a bounce movement off the left-most boundary and to
 	 * ensure that the Shape's position after the movement is correct.
