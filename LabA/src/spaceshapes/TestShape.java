@@ -272,6 +272,22 @@ public class TestShape {
 				+ "(oval 34,84,25,35)", _painter.toString());
 	}
 	
+	@Test
+	public void testSmallHexagonMoveWithBounceOffTop() {
+		HexagonShape shape = new HexagonShape(10, 90, 12, 16);
+		shape.paint(_painter);
+		shape.move(10000, 135);
+		shape.paint(_painter);
+		shape.move(10000, 135);
+		shape.paint(_painter);
+		System.out.println(_painter.toString());
+		assertEquals("(line 10,107,22,125)(line 22,125,35,107)"
+				+ "(line 35,107,22,90)(line 22,90,10,107)(line 22,117,34,135)"
+				+ "(line 34,135,47,117)(line 47,117,34,100)(line 34,100,22,117)"
+				+ "(line 34,101,46,119)(line 46,119,59,101)(line 59,101,46,84)"
+				+ "(line 46,84,34,101)", _painter.toString());
+	}
+	
 	/**
 	 * Test to perform a bounce movement off the bottom right corner and to
 	 * ensure that the Shape's position after the movement is correct.
