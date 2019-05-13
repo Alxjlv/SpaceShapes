@@ -52,6 +52,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		_shapes.add(new HexagonShape(25,25,3,2,90,90));
 		_shapes.add(new HexagonShape(22,22,5,5));
 		_shapes.add(new DynamicShape(21,21,2,2));
+		_shapes.add(new DynamicShape(4,4,1,1));
 		
 		// Start the animation.
 		_timer.start();

@@ -31,20 +31,32 @@ public class DynamicShape extends Shape {
 			nextX = 0;
 			_deltaX = -_deltaX;
 			_collide = true;
+			_x = nextX;
+			_y = nextY;
+			return;
 		} else if (nextX + _width >= width) {
 			nextX = width - _width;
 			_deltaX = -_deltaX;
 			_collide = true;
+			_x = nextX;
+			_y = nextY;
+			return;
 		}
 
 		if (nextY <= 0) {
 			nextY = 0;
 			_deltaY = -_deltaY;
 			_collide = false;
+			_x = nextX;
+			_y = nextY;
+			return;
 		} else if (nextY + _height >= height) {
 			nextY = height - _height;
 			_deltaY = -_deltaY;
 			_collide = false;
+			_x = nextX;
+			_y = nextY;
+			return;
 		}
 
 		_x = nextX;
