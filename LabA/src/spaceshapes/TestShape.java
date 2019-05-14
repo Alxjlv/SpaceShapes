@@ -465,4 +465,80 @@ public class TestShape {
 				+ "(rectangle 0,150,25,35)(rectangle filled)(rectangle colour set: 212 212 212)"
 				+ "(rectangle 90,100,25,35)", _painter.toString());
 	}
+	
+	/**
+	 * Test to perform a bounce movement off the bottom right corner and to
+	 * ensure that the Shape's position after the movement is correct.
+	 */
+	@Test
+	public void testRectangleMoveWithBounceOffTopAndRight() {
+		RectangleShape shape = new RectangleShape(75, 75, 25, 35);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		assertEquals("(rectangle 75,75,25,35)(rectangle 100,100,25,35)"
+				+ "(rectangle 75,65,25,35)", _painter.toString());
+	}
+	
+	@Test
+	public void testOvalMoveWithBounceOffTopAndRight() {
+		OvalShape shape = new OvalShape(75, 75, 25, 35);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		assertEquals("(oval 75,75,25,35)(oval 100,100,25,35)"
+				+ "(oval 75,65,25,35)", _painter.toString());
+	}
+	
+	@Test
+	public void testSmallHexagonMoveWithBounceOffTopAndRight() {
+		HexagonShape shape = new HexagonShape(75, 75, 25, 35);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		assertEquals("(line 75,92,87,110)(line 87,110,100,92)"
+				+ "(line 100,92,87,75)(line 87,75,75,92)(line 100,117,112,135)"
+				+ "(line 112,135,125,117)(line 125,117,112,100)"
+				+ "(line 112,100,100,117)(line 75,82,87,100)"
+				+ "(line 87,100,100,82)(line 100,82,87,65)(line 87,65,75,82)"
+				, _painter.toString());
+	}
+	
+	@Test
+	public void testBigHexagonMoveWithBounceOffTopAndRight() {
+		HexagonShape shape = new HexagonShape(50, 50, 25, 35,50,50);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		assertEquals("(line 50,75,70,100)(line 70,100,80,100)(line 80,100,100,75)"
+				+ "(line 100,75,80,50)(line 80,50,70,50)(line 70,50,50,75)"
+				+ "(line 75,110,95,135)(line 95,135,105,135)(line 105,135,125,110)"
+				+ "(line 125,110,105,85)(line 105,85,95,85)(line 95,85,75,110)"
+				+ "(line 50,75,70,100)(line 70,100,80,100)(line 80,100,100,75)"
+				+ "(line 100,75,80,50)(line 80,50,70,50)(line 70,50,50,75)"
+				, _painter.toString());
+	}
+	
+	@Test
+	public void testDynamicShapeMoveWithBounceOffTopAndRight() {
+		DynamicShape shape = new DynamicShape(75, 65, 25, 35);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		shape.move(125, 135);
+		shape.paint(_painter);
+		System.out.println(_painter.toString());
+		assertEquals("(rectangle colour set: 212 212 212)(rectangle 75,65,25,35)"
+				+ "(rectangle colour set: 212 212 212)(rectangle colour set: 255 0 0)"
+				+ "(rectangle 100,100,25,35)(rectangle filled)(rectangle colour set: 212 212 212)"
+				+ "(rectangle 75,100,25,35)", _painter.toString());
+	}
 }
