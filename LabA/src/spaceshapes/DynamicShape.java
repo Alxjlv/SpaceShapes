@@ -3,8 +3,6 @@ package spaceshapes;
 import java.awt.Color;
 
 public class DynamicShape extends Shape {
-
-	private boolean _collide = false;
 	
 	public DynamicShape() {
 		super();
@@ -20,47 +18,6 @@ public class DynamicShape extends Shape {
 
 	public DynamicShape(int x, int y, int deltaX, int deltaY, int width, int height) {
 		super(x, y, deltaX, deltaY, width, height);
-	}
-
-	@Override
-	public void move(int width, int height) {
-		int nextX = _x + _deltaX;
-		int nextY = _y + _deltaY;
-
-		if (nextX <= 0) {
-			nextX = 0;
-			_deltaX = -_deltaX;
-			_collide = true;
-			_x = nextX;
-			_y = nextY;
-			return;
-		} else if (nextX + _width >= width) {
-			nextX = width - _width;
-			_deltaX = -_deltaX;
-			_collide = true;
-			_x = nextX;
-			_y = nextY;
-			return;
-		}
-
-		if (nextY <= 0) {
-			nextY = 0;
-			_deltaY = -_deltaY;
-			_collide = false;
-			_x = nextX;
-			_y = nextY;
-			return;
-		} else if (nextY + _height >= height) {
-			nextY = height - _height;
-			_deltaY = -_deltaY;
-			_collide = false;
-			_x = nextX;
-			_y = nextY;
-			return;
-		}
-
-		_x = nextX;
-		_y = nextY;
 	}
 	
 	@Override

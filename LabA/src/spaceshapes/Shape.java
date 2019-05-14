@@ -36,6 +36,8 @@ public abstract class Shape {
 	protected int _width;
 
 	protected int _height;
+	
+	protected boolean _collide = false;
 	// ===
 
 	/**
@@ -84,21 +86,35 @@ public abstract class Shape {
 		int nextX = _x + _deltaX;
 		int nextY = _y + _deltaY;
 
-		if (nextX <= 0) {
-			nextX = 0;
-			_deltaX = -_deltaX;
-		} else if (nextX + _width >= width) {
-			nextX = width - _width;
-			_deltaX = -_deltaX;
-		}
-
 		if (nextY <= 0) {
 			nextY = 0;
 			_deltaY = -_deltaY;
+			_collide = false;
+			_x = nextX;
+			_y = nextY;
 		} else if (nextY + _height >= height) {
 			nextY = height - _height;
 			_deltaY = -_deltaY;
+			_collide = false;
+			_x = nextX;
+			_y = nextY;
 		}
+		
+		if (nextX <= 0) {
+			nextX = 0;
+			_deltaX = -_deltaX;
+			_collide = true;
+			_x = nextX;
+			_y = nextY;
+		} else if (nextX + _width >= width) {
+			nextX = width - _width;
+			_deltaX = -_deltaX;
+			_collide = true;
+			_x = nextX;
+			_y = nextY;
+		}
+
+		
 
 		_x = nextX;
 		_y = nextY;

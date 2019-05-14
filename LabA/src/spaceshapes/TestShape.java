@@ -462,8 +462,9 @@ public class TestShape {
 		shape.paint(_painter);
 		assertEquals("(rectangle colour set: 212 212 212)(rectangle 10,90,25,35)"
 				+ "(rectangle colour set: 212 212 212)(rectangle colour set: 255 0 0)"
-				+ "(rectangle 0,150,25,35)(rectangle filled)(rectangle colour set: 212 212 212)"
-				+ "(rectangle 90,100,25,35)", _painter.toString());
+				+ "(rectangle 0,100,25,35)(rectangle filled)(rectangle colour set: 212 212 212)"
+				+ "(rectangle colour set: 255 0 0)(rectangle 90,40,25,35)(rectangle filled)"
+				, _painter.toString());
 	}
 	
 	/**
@@ -538,7 +539,8 @@ public class TestShape {
 		assertEquals("(rectangle colour set: 212 212 212)(rectangle 75,65,25,35)"
 				+ "(rectangle colour set: 212 212 212)(rectangle colour set: 255 0 0)"
 				+ "(rectangle 100,100,25,35)(rectangle filled)(rectangle colour set: 212 212 212)"
-				+ "(rectangle 75,100,25,35)", _painter.toString());
+				+ "(rectangle colour set: 255 0 0)(rectangle 75,65,25,35)(rectangle filled)"
+				, _painter.toString());
 	}
 	
 	/**
@@ -612,7 +614,8 @@ public class TestShape {
 		assertEquals("(rectangle colour set: 212 212 212)(rectangle 10,10,50,50)"
 				+ "(rectangle colour set: 212 212 212)(rectangle colour set: 255 0 0)"
 				+ "(rectangle 0,0,50,50)(rectangle filled)(rectangle colour set: 212 212 212)"
-				+ "(rectangle 10,0,50,50)", _painter.toString());
+				+ "(rectangle colour set: 255 0 0)(rectangle 10,10,50,50)(rectangle filled)"
+				, _painter.toString());
 	}
 	
 	/**
@@ -686,6 +689,7 @@ public class TestShape {
 		assertEquals("(rectangle colour set: 212 212 212)(rectangle 10,65,25,35)"
 				+ "(rectangle colour set: 212 212 212)(rectangle colour set: 255 0 0)"
 				+ "(rectangle 0,100,25,35)(rectangle filled)(rectangle colour set: 212 212 212)"
-				+ "(rectangle 10,100,25,35)", _painter.toString());
+				+ "(rectangle colour set: 255 0 0)(rectangle 10,65,25,35)(rectangle filled)"
+				, _painter.toString());
 	}
 }
