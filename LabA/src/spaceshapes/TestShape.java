@@ -1,4 +1,4 @@
-package spaceshapes;
+ package spaceshapes;
 
 import static org.junit.Assert.assertEquals;
 
@@ -129,21 +129,18 @@ public class TestShape {
 	
 	@Test
 	public void testBigHexagonMoveWithBounceOffRight() {
-		HexagonShape shape = new HexagonShape(100, 20, 12, 15,90,90);
+		HexagonShape shape = new HexagonShape(10, 20, 35, 15,90,90);
 		shape.paint(_painter);
 		shape.move(135, 10000);
 		shape.paint(_painter);
 		shape.move(135, 10000);
 		shape.paint(_painter);
-		assertEquals("(line 100,65,120,110)(line 120,110,170,110)"
-				+ "(line 170,110,190,65)(line 190,65,170,20)"
-				+ "(line 170,20,120,20)(line 120,20,100,65)"
-				+ "(line 45,80,65,125)(line 65,125,115,125)"
-				+ "(line 115,125,135,80)(line 135,80,115,35)"
-				+ "(line 115,35,65,35)(line 65,35,45,80"
-				+ ")(line 33,95,53,140)(line 53,140,103,140)"
-				+ "(line 103,140,123,95)(line 123,95,103,50)"
-				+ "(line 103,50,53,50)(line 53,50,33,95)"
+		assertEquals("(line 10,65,30,110)(line 30,110,80,110)(line 80,110,100,65)"
+				+ "(line 100,65,80,20)(line 80,20,30,20)(line 30,20,10,65)"
+				+ "(line 45,80,65,125)(line 65,125,115,125)(line 115,125,135,80)"
+				+ "(line 135,80,115,35)(line 115,35,65,35)(line 65,35,45,80)"
+				+ "(line 10,95,30,140)(line 30,140,80,140)(line 80,140,100,95)"
+				+ "(line 100,95,80,50)(line 80,50,30,50)(line 30,50,10,95)"
 				, _painter.toString());
 	}
 	
