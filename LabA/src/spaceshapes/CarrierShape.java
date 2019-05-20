@@ -31,4 +31,24 @@ public class CarrierShape extends Shape {
 	void add(Shape shape) throws IndexOutOfBoundsException {
 		
 	}
+	
+	void remove(Shape shape) {
+		
+	}
+	
+	public Shape shapeAt(int index) throws IndexOutOfBoundsException {
+		return new RectangleShape();
+	}
+	
+	public int shapeCount() {
+		return -1;
+	}
+	
+	public int indexOf(Shape shape) {
+		return -1;
+	}
+	
+	public boolean contains(Shape shape) {
+		return false;
+	}
 }

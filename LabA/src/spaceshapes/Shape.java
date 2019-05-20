@@ -1,5 +1,8 @@
 package spaceshapes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Abstract superclass to represent the general concept of a Shape. This class
  * defines state common to all special kinds of Shape instances and implements
@@ -38,8 +41,10 @@ public abstract class Shape {
 	protected int _height;
 	
 	protected boolean _collide = false;
+	
+	protected Shape _parent;
 	// ===
-
+	
 	/**
 	 * Creates a Shape object with default values for instance variables.
 	 */
@@ -176,5 +181,14 @@ public abstract class Shape {
 	 */
 	public String toString() {
 		return getClass().getName();
+	}
+	
+	public List<Shape> path(){
+		List<Shape> shapes = new ArrayList<Shape>();
+		return shapes;
+	}
+	
+	public CarrierShape parent() {
+		return null;
 	}
 }
