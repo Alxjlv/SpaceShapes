@@ -43,6 +43,8 @@ public abstract class Shape {
 	protected boolean _collide = false;
 	
 	protected Shape _parent;
+	
+	protected boolean _isChild;
 	// ===
 	
 	/**
@@ -183,11 +185,21 @@ public abstract class Shape {
 		return getClass().getName();
 	}
 	
+/**
+ * Returns an ordered list of Shape objects
+ * First item in the list is the root CarrierShape
+ * Last item in the list is the object calling the method. Any items in between are between those 2
+ * @return
+ */
 	public List<Shape> path(){
 		List<Shape> shapes = new ArrayList<Shape>();
 		return shapes;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public CarrierShape parent() {
 		return null;
 	}
