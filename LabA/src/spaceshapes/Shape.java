@@ -42,7 +42,7 @@ public abstract class Shape {
 	
 	protected boolean _collide = false;
 	
-	protected Shape _parent;
+	protected CarrierShape _parent;
 	
 	protected boolean _isChild;
 	// ===
@@ -196,11 +196,21 @@ public abstract class Shape {
 		return shapes;
 	}
 	
+	public void addParent(CarrierShape carrier) {
+		if (_parent != null) {
+			_parent = carrier;
+		}
+	}
+	
 	/**
-	 * 
+	 * returns the parent carrier shape - null if there isn't any parent carrier shape
 	 * @return
 	 */
 	public CarrierShape parent() {
-		return null;
+		if(!_isChild) {
+			return null;
+		}else {
+			return _parent;
+		}
 	}
 }

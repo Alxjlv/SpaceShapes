@@ -25,18 +25,32 @@ public class CarrierShape extends Shape {
 
 	@Override
 	public void paint(Painter painter) {
+		//may also need to call paint on the child
 		painter.drawRect(_x,_y,_width,_height);
+		for(Shape shape : _children) {
+			shape.paint(painter);
+		}
 	}
 
 	@Override
 	public void move(int width, int height) {
-		
+		super.move(width, height);
+		for(Shape shape : _children) {
+			shape.move(_x+_width, _y+_height);
+		}
 	}
 	
-	void add(Shape shape) throws IndexOutOfBoundsException {
-		if(_children.contains(shape)) {
-			_children.add(shape);
-			shape._isChild = true;
+	void add(Shape shape) throws IllegalArgumentException {
+		if(!_children.contains(shape)) {
+			if((!(shape._height>=_height||shape._width>=_width))
+					&&!((shape._height+shape._y>_height+_y)||(shape._width+shape._x>_width+_x))) {
+				_children.add(shape);
+				shape.addParent(this);
+				shape._isChild = true;
+			}
+			else {
+				throw new IllegalArgumentException();
+			}
 		}
 	}
 	
