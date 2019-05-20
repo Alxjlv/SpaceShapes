@@ -28,7 +28,7 @@ public class CarrierShape extends Shape {
 		
 	}
 	
-	void add(Shape shape) {
+	void add(Shape shape) throws IndexOutOfBoundsException {
 		
 	}
 }
