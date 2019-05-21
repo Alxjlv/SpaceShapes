@@ -24,7 +24,7 @@ public class CarrierShape extends Shape {
 	}
 
 	@Override
-	public void paint(Painter painter) {
+	public void paintShape(Painter painter) {
 		//may also need to call paint on the child
 		painter.drawRect(_x,_y,_width,_height);
 		painter.translate(_x,_y);

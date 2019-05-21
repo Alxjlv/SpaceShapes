@@ -1,6 +1,7 @@
 package spaceshapes;
 
 import java.awt.Color;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 
 /**
@@ -65,6 +66,18 @@ public class GraphicsPainter implements Painter {
 	public void paintText(String text,int x, int y) {
 		if(text == null) {
 			return;
+		}
+		FontMetrics fontAdjust = _g.getFontMetrics();
+		int stringWidth = fontAdjust.stringWidth(text);
+		int ascent = fontAdjust.getAscent();
+		int descent = fontAdjust.getDescent();
+		x -= stringWidth/2;
+		if(ascent > descent) {
+			y+=(ascent-descent)/2;
+		}else if(descent>ascent) {
+			y+=(descent-ascent)/2;
+		}else {
+			y-= (descent+ascent)/2;
 		}
 		//_g.getFontMetrics();
 		_g.drawString(text, x, y);

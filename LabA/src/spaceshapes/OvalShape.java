@@ -22,7 +22,7 @@ public class OvalShape extends Shape {
 	}
 
 	@Override
-	public void paint(Painter painter) {
+	public void paintShape(Painter painter) {
 		// TODO Auto-generated method stub
 		painter.drawOval(_x, _y, _width, _height);
 

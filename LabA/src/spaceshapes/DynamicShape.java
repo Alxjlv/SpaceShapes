@@ -20,7 +20,7 @@ public class DynamicShape extends Shape {
 		super(x, y, deltaX, deltaY, width, height);
 	}
 	
-	public void paint(Painter painter) {//need to draw rectangle in the new colour
+	public void paintShape(Painter painter) {//need to draw rectangle in the new colour
 		if(!_sideCollide) {
 			painter.drawRect(_x, _y, _width, _height);
 		}

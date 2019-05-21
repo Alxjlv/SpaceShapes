@@ -23,7 +23,7 @@ public class HexagonShape extends Shape {
 	}
 
 	@Override
-	public void paint(Painter painter) {
+	public void paintShape(Painter painter) {
 		if(_width >=40){
 			painter.drawLine(_x, _y +_height/2, _x+20, _y + _height);
 			painter.drawLine(_x+20, _y + _height, _x + _width-20, _y + _height);

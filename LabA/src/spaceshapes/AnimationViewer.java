@@ -95,7 +95,6 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		// Progress the animation.
 		for(Shape s : _shapes) {
 			s.paint(painter);
-			s.paintString(painter);
 			s.move(width, height);
 		}
 	}
