@@ -57,6 +57,17 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		_shapes.add(carrier);
 		Shape rect = new RectangleShape(20,20,4,5,10,10);
 		carrier.add(rect);
+		Shape dynamic = new DynamicShape(20,20,3,4,15,15);
+		carrier.add(dynamic);
+		CarrierShape carrier2 = new CarrierShape(30,30,2,3,50,50);
+		carrier.add(carrier2);
+		CarrierShape carrier3 = new CarrierShape(35,35,1,2,30,30);
+		carrier2.add(carrier3);
+		Shape rect2 = new RectangleShape(35,35,4,5,10,10);
+		carrier3.add(rect2);
+		Shape dynamic2 = new DynamicShape(35,35,4,5,10,10);
+		carrier3.add(dynamic2);
+		
 		
 		// Start the animation.
 		_timer.start();

@@ -20,18 +20,16 @@ public class DynamicShape extends Shape {
 		super(x, y, deltaX, deltaY, width, height);
 	}
 	
-	@Override
 	public void paint(Painter painter) {//need to draw rectangle in the new colour
-		painter.setColor(new Color(212,212,212));
-		if(!_collide) {
+		if(!_sideCollide) {
 			painter.drawRect(_x, _y, _width, _height);
 		}
-		if(_collide) {
+		if(_sideCollide) {
 			painter.setColor(Color.red);
 			painter.drawRect(_x, _y, _width, _height);
 			painter.fillRect(_x,_y,_width,_height);
 		}
-		
+		painter.setColor(new Color(212,212,212));
 	}
-
+	
 }

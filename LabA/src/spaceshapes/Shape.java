@@ -40,11 +40,10 @@ public abstract class Shape {
 
 	protected int _height;
 	
-	protected boolean _collide = false;
+	protected boolean _sideCollide = false;
 	
 	protected CarrierShape _parent;
 	
-	protected boolean _isChild;
 	// ===
 	
 	/**
@@ -92,17 +91,17 @@ public abstract class Shape {
 	public void move(int width, int height) {
 		int nextX = _x + _deltaX;
 		int nextY = _y + _deltaY;
-
+		
 		if (nextY <= 0) {
 			nextY = 0;
 			_deltaY = -_deltaY;
-			_collide = false;
+			_sideCollide = false;
 			_x = nextX;
 			_y = nextY;
 		} else if (nextY + _height >= height) {
 			nextY = height - _height;
 			_deltaY = -_deltaY;
-			_collide = false;
+			_sideCollide = false;
 			_x = nextX;
 			_y = nextY;
 		}
@@ -110,13 +109,13 @@ public abstract class Shape {
 		if (nextX <= 0) {
 			nextX = 0;
 			_deltaX = -_deltaX;
-			_collide = true;
+			_sideCollide = true;
 			_x = nextX;
 			_y = nextY;
 		} else if (nextX + _width >= width) {
 			nextX = width - _width;
 			_deltaX = -_deltaX;
-			_collide = true;
+			_sideCollide = true;
 			_x = nextX;
 			_y = nextY;
 		}
@@ -126,7 +125,7 @@ public abstract class Shape {
 		_x = nextX;
 		_y = nextY;
 	}
-
+	
 	/**
 	 * Method to be implemented by concrete subclasses to handle subclass
 	 * specific painting.
@@ -192,13 +191,19 @@ public abstract class Shape {
  * @return
  */
 	public List<Shape> path(){
-		List<Shape> shapes = new ArrayList<Shape>();
-		return shapes;
+		List<Shape> shapeList = new ArrayList<Shape>();
+		if(_parent !=null) {
+			shapeList.addAll(_parent.path());
+		}
+		shapeList.add(this);
+		return shapeList;
 	}
 	
 	public void addParent(CarrierShape carrier) {
-		if (_parent != null) {
+		if (_parent == null) {
 			_parent = carrier;
+		}else if(carrier == null) {
+			_parent = null;
 		}
 	}
 	
@@ -207,10 +212,11 @@ public abstract class Shape {
 	 * @return
 	 */
 	public CarrierShape parent() {
-		if(!_isChild) {
-			return null;
-		}else {
+		if(_parent !=null) {
 			return _parent;
+		}else {
+			return null;
 		}
 	}
+	
 }

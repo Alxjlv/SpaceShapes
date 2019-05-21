@@ -45,7 +45,7 @@ public class MockPainter implements Painter {
 
 	@Override
 	public void fillRect(int x, int y, int width, int height) {
-		_log.append("(rectangle filled)");
+		//_log.append("(rectangle filled)");
 	}
 
 	@Override
@@ -56,11 +56,15 @@ public class MockPainter implements Painter {
 
 	@Override
 	public void setColor(Color c) {
-		int red = c.getRed();
-		int green = c.getGreen();
-		int blue = c.getBlue();
-		_log.append("(rectangle colour set: " + red +" " + green + " " + blue+")");
+		//int red = c.getRed();
+		//int green = c.getGreen();
+		//int blue = c.getBlue();
+		//_log.append("(rectangle colour set: " + red +" " + green + " " + blue+")");
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void translate(int x, int y) {
+		return;
 	}
 }

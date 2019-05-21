@@ -57,4 +57,8 @@ public class GraphicsPainter implements Painter {
 	public void setColor(Color c) {
 		_g.setColor(c);
 	}
+	
+	public void translate(int x, int y) {
+		_g.translate(x, y);
+	}
 }
