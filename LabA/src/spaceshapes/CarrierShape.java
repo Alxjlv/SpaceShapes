@@ -44,8 +44,7 @@ public class CarrierShape extends Shape {
 	
 	void add(Shape shape) throws IllegalArgumentException {
 		if(shape.parent()==null) {
-			if((!(shape._height>=_height||shape._width>=_width))
-					&&!((shape._height+shape._y>_height+_y)||(shape._width+shape._x>_width+_x))) {
+			if(withinBounds(shape)) {
 				_children.add(shape);
 				shape.addParent(this);
 			}
