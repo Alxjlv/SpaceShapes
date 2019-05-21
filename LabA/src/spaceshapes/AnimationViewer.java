@@ -45,7 +45,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		_shapes = new ArrayList<Shape>();
 	
 		// Populate the list of Shapes.
-		//_shapes.add(new RectangleShape(0, 0, 2, 3));
+		_shapes.add(new RectangleShape(0, 0, 2, 3));
 		//_shapes.add(new RectangleShape(10, 10, 4, 2));
 		//_shapes.add(new OvalShape(20,20,5,3));
 		//_shapes.add(new OvalShape(20,20,3, 5));
@@ -67,7 +67,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		carrier3.add(rect2);
 		Shape dynamic2 = new DynamicShape(35,35,4,5,10,10);
 		carrier3.add(dynamic2);
-		
+		//dynamic2.setDisplayText("Hello World");
 		
 		// Start the animation.
 		_timer.start();
@@ -95,6 +95,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		// Progress the animation.
 		for(Shape s : _shapes) {
 			s.paint(painter);
+			s.paintString(painter);
 			s.move(width, height);
 		}
 	}

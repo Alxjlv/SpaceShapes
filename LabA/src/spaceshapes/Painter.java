@@ -35,4 +35,6 @@ public interface Painter {
 	public void setColor(Color c);
 	
 	public void translate(int x, int y);
+	
+	public void paintText(String text, int x, int y);
 }

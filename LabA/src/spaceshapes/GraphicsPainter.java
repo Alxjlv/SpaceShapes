@@ -61,4 +61,12 @@ public class GraphicsPainter implements Painter {
 	public void translate(int x, int y) {
 		_g.translate(x, y);
 	}
+	
+	public void paintText(String text,int x, int y) {
+		if(text == null) {
+			return;
+		}
+		//_g.getFontMetrics();
+		_g.drawString(text, x, y);
+	}
 }

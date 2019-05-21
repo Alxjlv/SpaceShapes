@@ -44,6 +44,8 @@ public abstract class Shape {
 	
 	protected CarrierShape _parent;
 	
+	protected String _displayText = "Hello";
+	
 	// ===
 	
 	/**
@@ -131,8 +133,20 @@ public abstract class Shape {
 	 * specific painting.
 	 * @param painter the Painter object used for drawing.
 	 */
-	public abstract void paint(Painter painter);
+	public abstract void paint(Painter painter);//make not abstract, and paint string part of it.
+	//Add a hook method which is abstract, which every class will implement - eg. slot
+	//This is the paintShape method
+	
+	public void paintString(Painter painter) {
+		int centreX = _width/2 + _x;
+		int centreY = _height/2 +_y;
+		painter.paintText(_displayText,centreX,centreY);
+	}
 
+	public void setDisplayText(String text) {
+		_displayText = text;
+	}
+	
 	/**
 	 * Returns this Shape object's x position.
 	 */

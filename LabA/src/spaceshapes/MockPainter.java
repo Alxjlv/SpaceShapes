@@ -64,6 +64,10 @@ public class MockPainter implements Painter {
 		
 	}
 	
+	public void paintText(String text, int x, int y) {
+		return;
+	}
+	
 	public void translate(int x, int y) {
 		return;
 	}
