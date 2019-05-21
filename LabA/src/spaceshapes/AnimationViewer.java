@@ -67,7 +67,13 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		carrier3.add(rect2);
 		Shape dynamic2 = new DynamicShape(35,35,4,5,10,10);
 		carrier3.add(dynamic2);
-		//dynamic2.setDisplayText("Hello World");
+		dynamic2.setDisplayText("Triple nested dynamic shape");
+		carrier.setDisplayText("Top level nest");
+		carrier2.setDisplayText("Mid level nest");
+		carrier3.setDisplayText("Bottom level nest");
+		dynamic.setDisplayText("Nested dynamic shape");
+		rect.setDisplayText("Nested rectangle");
+		rect2.setDisplayText("Triply nested rectangle");
 		
 		// Start the animation.
 		_timer.start();

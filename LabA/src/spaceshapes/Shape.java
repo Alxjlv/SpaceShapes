@@ -44,7 +44,7 @@ public abstract class Shape {
 	
 	protected CarrierShape _parent;
 	
-	protected String _displayText = "Hello";
+	protected String _displayText;
 	
 	// ===
 	
