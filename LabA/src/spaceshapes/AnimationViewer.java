@@ -45,7 +45,9 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		_shapes = new ArrayList<Shape>();
 	
 		// Populate the list of Shapes.
-		_shapes.add(new RectangleShape(0, 0, 2, 3));
+		Shape rectOuter = new RectangleShape(0, 0, 2, 3);
+		rectOuter.setDisplayText("aaaaaaaaaaa");
+		_shapes.add(rectOuter);
 		//_shapes.add(new RectangleShape(10, 10, 4, 2));
 		//_shapes.add(new OvalShape(20,20,5,3));
 		//_shapes.add(new OvalShape(20,20,3, 5));
@@ -53,15 +55,15 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		//_shapes.add(new HexagonShape(22,22,5,5));
 		//_shapes.add(new DynamicShape(21,21,2,2));
 		//_shapes.add(new DynamicShape(4,4,1,1));
-		CarrierShape carrier = new CarrierShape(20,20,5,5,100,100);
+		CarrierShape carrier = new CarrierShape(20,20,5,5,400,400);
 		_shapes.add(carrier);
 		Shape rect = new RectangleShape(20,20,4,5,10,10);
 		carrier.add(rect);
 		Shape dynamic = new DynamicShape(20,20,3,4,15,15);
 		carrier.add(dynamic);
-		CarrierShape carrier2 = new CarrierShape(30,30,2,3,50,50);
+		CarrierShape carrier2 = new CarrierShape(30,30,2,3,300,300);
 		carrier.add(carrier2);
-		CarrierShape carrier3 = new CarrierShape(35,35,1,2,30,30);
+		CarrierShape carrier3 = new CarrierShape(35,35,1,2,200,200);
 		carrier2.add(carrier3);
 		Shape rect2 = new RectangleShape(35,35,4,5,10,10);
 		carrier3.add(rect2);
@@ -74,6 +76,15 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		dynamic.setDisplayText("Nested dynamic shape");
 		rect.setDisplayText("Nested rectangle");
 		rect2.setDisplayText("Triply nested rectangle");
+		int size = 499;
+		CarrierShape bigNest = new CarrierShape(0,0,1,2,size,size);
+		_shapes.add(bigNest);
+		do {
+			size=size-3;
+			CarrierShape tempNest = new CarrierShape(0,0,1,2,size,size);
+			bigNest.add(tempNest);
+			bigNest = tempNest;
+		}while(size >=1);
 		
 		// Start the animation.
 		_timer.start();

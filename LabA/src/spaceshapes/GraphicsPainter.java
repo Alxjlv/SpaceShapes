@@ -76,10 +76,7 @@ public class GraphicsPainter implements Painter {
 			y+=(ascent-descent)/2;
 		}else if(descent>ascent) {
 			y+=(descent-ascent)/2;
-		}else {
-			y-= (descent+ascent)/2;
 		}
-		//_g.getFontMetrics();
 		_g.drawString(text, x, y);
 	}
 }

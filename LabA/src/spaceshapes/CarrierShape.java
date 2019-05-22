@@ -25,7 +25,6 @@ public class CarrierShape extends Shape {
 
 	@Override
 	public void paintShape(Painter painter) {
-		//may also need to call paint on the child
 		painter.drawRect(_x,_y,_width,_height);
 		painter.translate(_x,_y);
 		for(Shape shape : _children) {
@@ -47,13 +46,10 @@ public class CarrierShape extends Shape {
 			if(withinBounds(shape)) {
 				_children.add(shape);
 				shape.addParent(this);
+				return;
 			}
-			else {
-				throw new IllegalArgumentException();
-			}
-		}else {
-			throw new IllegalArgumentException();
 		}
+		throw new IllegalArgumentException();
 	}
 	
 	protected boolean withinBounds(Shape shape) {

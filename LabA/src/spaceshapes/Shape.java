@@ -133,7 +133,7 @@ public abstract class Shape {
 	 * specific painting.
 	 * @param painter the Painter object used for drawing.
 	 */
-	public void paint(Painter painter) {
+	public final void paint(Painter painter) {
 		this.paintShape(painter);
 		int centreX = _width/2 + _x;
 		int centreY = _height/2 +_y;
@@ -143,7 +143,7 @@ public abstract class Shape {
 	//Add a hook method which is abstract, which every class will implement - eg. slot
 	//This is the paintShape method
 	
-	public abstract void paintShape(Painter painter);
+	protected abstract void paintShape(Painter painter);
 
 	public void setDisplayText(String text) {
 		_displayText = text;
