@@ -76,7 +76,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		dynamic.setDisplayText("Nested dynamic shape");
 		rect.setDisplayText("Nested rectangle");
 		rect2.setDisplayText("Triply nested rectangle");
-		int size = 499;
+		/*int size = 499;
 		CarrierShape bigNest = new CarrierShape(0,0,1,2,size,size);
 		_shapes.add(bigNest);
 		do {
@@ -84,7 +84,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 			CarrierShape tempNest = new CarrierShape(0,0,1,2,size,size);
 			bigNest.add(tempNest);
 			bigNest = tempNest;
-		}while(size >=1);
+		}while(size >=1);*/
 		
 		// Start the animation.
 		_timer.start();
