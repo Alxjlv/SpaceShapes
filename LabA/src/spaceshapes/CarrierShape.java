@@ -61,8 +61,6 @@ public class CarrierShape extends Shape {
 			return false;
 		}else if((shape.height()+shape.y() > _height + _y)||(shape.width()+shape.x() > _width + _x)) {
 			return false;
-		}else if ((shape.x() < _x)||(shape.y() < _y)){
-			return false;
 		}
 		return true;
 	}
