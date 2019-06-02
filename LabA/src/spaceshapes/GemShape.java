@@ -21,9 +21,13 @@ public class GemShape extends Shape {
 		super(x, y, deltaX, deltaY, width, height);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public GemShape(int x, int y, int deltaX, int deltaY, int width, int height, String text) {
+		super(x,y,deltaX,deltaY,width,height,text);
+	}
 
 	@Override
-	public void paintShape(Painter painter) {
+	public void doPaint(Painter painter) {
 		if(_width >=40){
 			painter.drawLine(_x, _y +_height/2, _x+20, _y + _height);
 			painter.drawLine(_x+20, _y + _height, _x + _width-20, _y + _height);

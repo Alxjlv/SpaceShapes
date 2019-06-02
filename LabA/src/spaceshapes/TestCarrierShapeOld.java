@@ -40,7 +40,7 @@ public class TestCarrierShapeOld {
 		_topLevelNest = new CarrierShape(0, 0, 2, 2, 100, 100);
 		_midLevelNest = new CarrierShape(0, 0, 2, 2, 50, 50);
 		_bottomLevelNest = new CarrierShape(5, 5, 2, 2, 10, 10);
-		_simpleShape = new DynamicShape(1, 1, 1, 1, 5, 5);
+		_simpleShape = new DynamicRectangleShape(1, 1, 1, 1, 5, 5);
 		
 		_midLevelNest.add(_bottomLevelNest);
 		_midLevelNest.add(_simpleShape);
@@ -100,7 +100,7 @@ public class TestCarrierShapeOld {
 	 */
 	@Test
 	public void testAddWithOutOfBoundsArgument() {
-		Shape shapeToAdd = new DynamicShape(80, 80, 2, 2, 50, 50);
+		Shape shapeToAdd = new DynamicRectangleShape(80, 80, 2, 2, 50, 50);
 		
 		try {
 			_topLevelNest.add(shapeToAdd);

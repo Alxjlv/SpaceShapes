@@ -33,7 +33,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testSimpleMoveDynamicShape() {
-		DynamicShape shape = new DynamicShape(100, 20, 12, 15);
+		DynamicRectangleShape shape = new DynamicRectangleShape(100, 20, 12, 15);
 		shape.paint(_painter);
 		shape.move(500, 500);
 		shape.paint(_painter);
@@ -47,7 +47,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffRight() {
-		DynamicShape shape = new DynamicShape(100, 20, 12, 15);
+		DynamicRectangleShape shape = new DynamicRectangleShape(100, 20, 12, 15);
 		shape.paint(_painter);
 		shape.move(135, 10000);
 		shape.paint(_painter);
@@ -64,7 +64,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffLeft() {
-		DynamicShape shape = new DynamicShape(10, 20, -12, 15);
+		DynamicRectangleShape shape = new DynamicRectangleShape(10, 20, -12, 15);
 		shape.paint(_painter);
 		shape.move(10000, 10000);
 		shape.paint(_painter);
@@ -81,7 +81,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffTop() {
-		DynamicShape shape = new DynamicShape(10, 90, 12, 16);
+		DynamicRectangleShape shape = new DynamicRectangleShape(10, 90, 12, 16);
 		shape.paint(_painter);
 		shape.move(10000, 135);
 		shape.paint(_painter);
@@ -98,7 +98,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffBottom() {
-		DynamicShape shape = new DynamicShape(10, 10, 12, -16);
+		DynamicRectangleShape shape = new DynamicRectangleShape(10, 10, 12, -16);
 		shape.paint(_painter);
 		shape.move(10000, 10000);
 		shape.paint(_painter);
@@ -116,7 +116,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffBottomAndRight() {
-		DynamicShape shape = new DynamicShape(10, 90, -90, 60);
+		DynamicRectangleShape shape = new DynamicRectangleShape(10, 90, -90, 60);
 		shape.paint(_painter);
 		shape.move(125, 135);
 		shape.paint(_painter);
@@ -134,7 +134,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffTopAndRight() {
-		DynamicShape shape = new DynamicShape(75, 65, 25, 35);
+		DynamicRectangleShape shape = new DynamicRectangleShape(75, 65, 25, 35);
 		shape.paint(_painter);
 		shape.move(125, 135);
 		shape.paint(_painter);
@@ -152,7 +152,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffBottomAndLeft() {
-		DynamicShape shape = new DynamicShape(10, 10, -10, -10,50,50);
+		DynamicRectangleShape shape = new DynamicRectangleShape(10, 10, -10, -10,50,50);
 		shape.paint(_painter);
 		shape.move(125, 135);
 		shape.paint(_painter);
@@ -170,7 +170,7 @@ public class TestDynamicShape {
 	 */
 	@Test
 	public void testDynamicShapeMoveWithBounceOffTopAndLeft() {
-		DynamicShape shape = new DynamicShape(10, 65, -10, 35);
+		DynamicRectangleShape shape = new DynamicRectangleShape(10, 65, -10, 35);
 		shape.paint(_painter);
 		shape.move(125, 135);
 		shape.paint(_painter);

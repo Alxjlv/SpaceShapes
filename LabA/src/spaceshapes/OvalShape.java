@@ -20,9 +20,13 @@ public class OvalShape extends Shape {
 		super(x, y, deltaX, deltaY, width, height);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public OvalShape(int x, int y, int deltaX, int deltaY, int width, int height, String text) {
+		super(x,y,deltaX,deltaY,width,height,text);
+	}
 
 	@Override
-	public void paintShape(Painter painter) {
+	public void doPaint(Painter painter) {
 		// TODO Auto-generated method stub
 		painter.drawOval(_x, _y, _width, _height);
 

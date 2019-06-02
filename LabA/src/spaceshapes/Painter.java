@@ -2,6 +2,7 @@ package spaceshapes;
 
 
 import java.awt.Color;
+import java.awt.Image;
 
 /** 
  * Interface to represent a type that offers primitive drawing methods.
@@ -37,4 +38,6 @@ public interface Painter {
 	public void translate(int x, int y);
 	
 	public void paintText(String text, int x, int y);
+	
+	public void drawImage(Image img, int x, int y, int width, int height);
 }

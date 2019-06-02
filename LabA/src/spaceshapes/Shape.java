@@ -83,6 +83,16 @@ public abstract class Shape {
 		_height = height;
 	}
 	
+	public Shape(int x, int y, int deltaX, int deltaY, int width, int height, String text) {
+		_x = x;
+		_y = y;
+		_deltaX = deltaX;
+		_deltaY = deltaY;
+		_width = width;
+		_height = height;
+		_displayText = text;
+	}
+	
 	/**
 	 * Moves this Shape object within the specified bounds. On hitting a 
 	 * boundary the Shape instance bounces off and back into the two- 
@@ -134,7 +144,7 @@ public abstract class Shape {
 	 * @param painter the Painter object used for drawing.
 	 */
 	public final void paint(Painter painter) {
-		this.paintShape(painter);
+		this.paint(painter);
 		int centreX = _width/2 + _x;
 		int centreY = _height/2 +_y;
 		painter.paintText(_displayText,centreX,centreY);
@@ -143,7 +153,7 @@ public abstract class Shape {
 	//Add a hook method which is abstract, which every class will implement - eg. slot
 	//This is the paintShape method
 	
-	protected abstract void paintShape(Painter painter);
+	protected abstract void doPaint(Painter painter);
 
 	public void setDisplayText(String text) {
 		_displayText = text;
@@ -189,6 +199,10 @@ public abstract class Shape {
 	 */
 	public int height() {
 		return _height;
+	}
+	
+	public String text() {
+		return _displayText;
 	}
 	
 	/**

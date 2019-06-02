@@ -43,10 +43,14 @@ public class RectangleShape extends Shape {
 		super(x,y,deltaX,deltaY,width,height);
 	}
 	
+	public RectangleShape(int x, int y, int deltaX, int deltaY, int width, int height, String text) {
+		super(x,y,deltaX,deltaY,width,height,text);
+	}
+	
 	/**
 	 * Paints this RectangleShape object using the supplied Painter object.
 	 */
-	public void paintShape(Painter painter) {
+	protected void doPaint(Painter painter) {
 		painter.drawRect(_x,_y,_width,_height);
 	}
 }

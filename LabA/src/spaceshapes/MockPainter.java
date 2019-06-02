@@ -1,6 +1,7 @@
 package spaceshapes;
 
 import java.awt.Color;
+import java.awt.Image;
 
 /**
  * Implementation of the Painter interface that does not actually do any
@@ -69,6 +70,10 @@ public class MockPainter implements Painter {
 	}
 	
 	public void translate(int x, int y) {
+		return;
+	}
+	
+	public void drawImage(Image img, int x, int y, int height, int width) {
 		return;
 	}
 }

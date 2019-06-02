@@ -3,6 +3,7 @@ package spaceshapes;
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.Image;
 
 /**
  * Implementation of the Painter interface that delegates drawing to a
@@ -78,5 +79,9 @@ public class GraphicsPainter implements Painter {
 			y+=(descent-ascent)/2;
 		}
 		_g.drawString(text, x, y);
+	}
+	
+	public void drawImage(Image img, int x, int y, int width, int height) {
+		_g.drawImage(img, x, y, width, height, null);
 	}
 }
