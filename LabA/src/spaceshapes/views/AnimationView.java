@@ -23,6 +23,7 @@ import spaceshapes.ShapeModelListener;
  * @author Ian Warren
  *
  */
+@SuppressWarnings("serial")
 public class AnimationView extends JPanel implements ShapeModelListener {
 
 	// Reference to root CarrierShape.

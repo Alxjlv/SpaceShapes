@@ -144,7 +144,7 @@ public abstract class Shape {
 	 * @param painter the Painter object used for drawing.
 	 */
 	public final void paint(Painter painter) {
-		this.paint(painter);
+		this.doPaint(painter);
 		int centreX = _width/2 + _x;
 		int centreY = _height/2 +_y;
 		painter.paintText(_displayText,centreX,centreY);
