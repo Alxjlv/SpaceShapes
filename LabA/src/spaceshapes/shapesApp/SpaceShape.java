@@ -269,7 +269,7 @@ public class SpaceShape extends JPanel {
 		JPanel treePanel = new JPanel();
 		treePanel.setBorder(BorderFactory.createTitledBorder("Shape composition hierarchy"));
 		JScrollPane scrollPaneForTree = new JScrollPane(_treeView);
-		scrollPaneForTree.setPreferredSize(new Dimension(300,404));
+		scrollPaneForTree.setPreferredSize(new Dimension(300,504));
 		treePanel.add(scrollPaneForTree);
 		
 		/*
@@ -280,7 +280,7 @@ public class SpaceShape extends JPanel {
 		JPanel animationPanel = new JPanel();
 		animationPanel.setBorder(BorderFactory.createTitledBorder("Space shape animation"));
 		JScrollPane scrollPaneForAnimation = new JScrollPane(_animationView);
-		scrollPaneForAnimation.setPreferredSize(new Dimension(404,404));
+		scrollPaneForAnimation.setPreferredSize(new Dimension(504,504));
 		animationPanel.add(scrollPaneForAnimation);
 		_animationView.setPreferredSize(ShapeConfig.instance().getAnimationBounds());
 

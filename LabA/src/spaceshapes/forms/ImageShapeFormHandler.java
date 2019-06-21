@@ -4,17 +4,19 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 import javax.imageio.ImageIO;
 import javax.swing.SwingWorker;
 
 import spaceshapes.CarrierShape;
 import spaceshapes.ImageRectangleShape;
+import spaceshapes.Shape;
 import spaceshapes.ShapeModel;
 import spaceshapes.forms.util.Form;
 import spaceshapes.forms.util.FormHandler;
 
-public class ImageShapeFormHandler extends SwingWorker<Object, Object> implements FormHandler{
+public class ImageShapeFormHandler extends SwingWorker<Shape, Shape> implements FormHandler{
 
 	private ShapeModel _model;
 	private CarrierShape _parentOfNewShape;
@@ -49,7 +51,7 @@ public class ImageShapeFormHandler extends SwingWorker<Object, Object> implement
 	}
 
 	@Override
-	protected Object doInBackground() throws Exception {
+	protected Shape doInBackground() throws Exception {
 		// TODO Auto-generated method stub
 			long startTime = System.currentTimeMillis();
 			
@@ -89,12 +91,24 @@ public class ImageShapeFormHandler extends SwingWorker<Object, Object> implement
 			
 			// Create the new Shape and add it to the model.
 			ImageRectangleShape imageShape = new ImageRectangleShape(deltaX, deltaY, scaledImage);
-			_model.add(imageShape, _parentOfNewShape);
+			//_model.add(imageShape, _parentOfNewShape);
 			
 			long elapsedTime = System.currentTimeMillis() - startTime;
 			System.out.println("Image loading and scaling took " + elapsedTime + "ms.");
-			return elapsedTime;
-		
+			return imageShape;
+	}
+	
+	@Override
+	public void done() {
+		try {
+			_model.add(get(), _parentOfNewShape);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
